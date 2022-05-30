@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Proyecto_FinalProgra.Agenda">
+    <Position X="2.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAGAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Agenda.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_FinalProgra.HistorialPaciente">
+    <Position X="5" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAYAAgAAAAABABAAAAAAAQAAAEAAAAQAAAAAEAAAAA=</HashCode>
+      <FileName>HistorialPaciente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_FinalProgra.Medicamentos">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAECAAAAAoAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Medicamentos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_FinalProgra.Pacientes">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAEACAAgAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Pacientes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_FinalProgra.Pacientesh">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pacientesh.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_FinalProgra.Receta">
+    <Position X="8" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAACAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Receta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_FinalProgra.Sintomas">
+    <Position X="9.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Sintomas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_FinalProgra.Enfermedades">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enfermedades.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
