@@ -5,10 +5,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace Proyecto_FinalProgra
 {
-    
+
     public partial class _Default : Page
     {
         static List<Pacientes> Pacientestemp = new List<Pacientes>();
@@ -16,7 +17,7 @@ namespace Proyecto_FinalProgra
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
         }
         private void GuardarJason()
         {
@@ -27,7 +28,7 @@ namespace Proyecto_FinalProgra
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-           GuardarJason();  
+            GuardarJason();
             Pacientestemp.Clear();
         }
 
@@ -35,25 +36,36 @@ namespace Proyecto_FinalProgra
         {
             Pacientes pacientes = new Pacientes();
 
-            if (String.IsNullOrEmpty(TextboxNitPaciente.Text) || String.IsNullOrEmpty(TextboxNombre.Text) || String.IsNullOrEmpty(TextBoxApellido.Text)|| String.IsNullOrEmpty(TextBoxFecha.Text) || String.IsNullOrEmpty(TextBoxTelefono.Text))
+            if (String.IsNullOrEmpty(TextboxNitPaciente.Text) || String.IsNullOrEmpty(TextboxNombre.Text) || String.IsNullOrEmpty(TextBoxApellido.Text) || String.IsNullOrEmpty(TextBoxFecha.Text) || String.IsNullOrEmpty(TextBoxTelefono.Text))
             {
                 Response.Write("<script>alert('Agregar todos los campos')</script>");
             }
-            else 
+
+
+            else
             {
                 pacientes.NitPaciente = Convert.ToInt16(TextboxNitPaciente.Text);
                 pacientes.Nombre = TextboxNombre.Text;
                 pacientes.Apellido = TextBoxApellido.Text;
-                pacientes.Direccion = TextBoxApellido.Text;
+                pacientes.Direccion = TextBoxDIrereccion.Text;
                 pacientes.Telefono = Convert.ToInt32(TextBoxTelefono.Text);
                 pacientes.Fechanacimiento = Convert.ToDateTime(TextBoxFecha.Text);
                 Pacientestemp.Add(pacientes);
                 GridView1.DataSource = Pacientestemp;
                 GridView1.DataBind();
-
             }
-                
+
         }
 
+        protected void TextboxNitPaciente_TextChanged(object sender, EventArgs e)
+        {
+
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(TextboxNitPaciente.Text, "  ^ [0-9]"))
+                {
+                    TextboxNitPaciente.Text = "";
+                }
+            }
+        }
     }
 }

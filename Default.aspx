@@ -6,7 +6,7 @@
         <h1>PACIENTES</h1>
         <p>
             NIt del Paciente&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextboxNitPaciente" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextboxNitPaciente" runat="server" OnTextChanged="TextboxNitPaciente_TextChanged"></asp:TextBox>
         </p>
         <p>
             Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
