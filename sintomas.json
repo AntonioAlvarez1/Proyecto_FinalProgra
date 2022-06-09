@@ -1,0 +1,23 @@
+[
+  
+  {
+    "CodigoS": 1,
+    "SintomaDesc": "Fiebre"
+  },
+  {
+    "CodigoS": 2,
+    "SintomaDesc": "Tos"
+  },
+  {
+    "CodigoS": 3,
+    "SintomaDesc": "Escalofrios"
+  },
+  {
+    "CodigoS": 4,
+    "SintomaDesc": "dolor"
+  },
+  {
+    "CodigoS": 5,
+    "SintomaDesc": "Diarrea"
+  }
+]

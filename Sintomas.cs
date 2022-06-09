@@ -8,7 +8,7 @@ namespace Proyecto_FinalProgra
     public class Sintomas
     {
         public int CodigoS { get; set; }
-        public string Sintoma { get; set; }
+        public string SintomaDesc { get; set; }
 
     }
 }
