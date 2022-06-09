@@ -9,8 +9,8 @@ namespace Proyecto_FinalProgra
     {
         
         public DateTime Fecha { get; set; }
-        public DateTime Inicio { get; set; }
-        public DateTime Fin { get; set;}
+        public TimeSpan Inicio { get; set; }
+        public TimeSpan Fin { get; set;}
 
     }
 }

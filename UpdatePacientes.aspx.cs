@@ -21,6 +21,7 @@ namespace Proyecto_FinalProgra
             jsonStream.Close();
             pacienteupdate = JsonConvert.DeserializeObject<List<Pacientes>>(json);
             
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
