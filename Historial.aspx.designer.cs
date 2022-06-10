@@ -105,13 +105,22 @@ namespace Proyecto_FinalProgra
         protected global::System.Web.UI.WebControls.TextBox TextBoxTratamiento;
 
         /// <summary>
-        /// Control TextBoxReceta.
+        /// Control DropDownListReceta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxReceta;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListReceta;
+
+        /// <summary>
+        /// Control ButtonAgregaReceta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonAgregaReceta;
 
         /// <summary>
         /// Control Calendar1.
@@ -130,6 +139,15 @@ namespace Proyecto_FinalProgra
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+
+        /// <summary>
+        /// Control GridViewHistorial.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewHistorial;
 
         /// <summary>
         /// Control Button1.

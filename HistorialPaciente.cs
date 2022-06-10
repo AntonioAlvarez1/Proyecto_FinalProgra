@@ -16,9 +16,9 @@ namespace Proyecto_FinalProgra
        public   List<Sintomas> Sintomas { get; set; }
         public string diagnostic { get; set; }
         public string Tratamiento { get; set; }
-        public List<Receta> Receta { get; set; }
+        public List<Medicamentos> Receta { get; set; }
         public DateTime ProximaVisita { get; set; }
-        public int Costoconsulta { get; set; }
+        public string Costoconsulta { get; set; }
         
     }
 }

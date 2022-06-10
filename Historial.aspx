@@ -12,7 +12,7 @@
     </p>
     <p>
         Fecha y Hora&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBoxFecha" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextBoxFecha" runat="server" TextMode="Date" Width="202px"></asp:TextBox>
     </p>
     <p>
         Temperatura&nbsp;&nbsp;&nbsp;&nbsp;
@@ -43,7 +43,9 @@
     </p>
     <p>
         Receta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBoxReceta" runat="server"></asp:TextBox>
+        <asp:DropDownList ID="DropDownListReceta" runat="server">
+        </asp:DropDownList>
+        <asp:Button ID="ButtonAgregaReceta" runat="server" OnClick="ButtonAgregaReceta_Click" Text="Receta" />
     </p>
     <p>
         Prox Visita&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -59,7 +61,9 @@
         </asp:DropDownList>
     </p>
     <p>
-        Imagenes varias</p>
+        <asp:GridView ID="GridViewHistorial" runat="server">
+        </asp:GridView>
+    </p>
     <p>
         <asp:Button ID="Button1" runat="server" Height="44px" OnClick="Button1_Click" Text="Agregar Historial Paciente" />
     </p>

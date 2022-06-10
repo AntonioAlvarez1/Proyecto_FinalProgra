@@ -13,10 +13,21 @@ namespace Proyecto_FinalProgra
     {
         static List<Sintomas> sintomastemp = new List<Sintomas>();
         static List<Sintomas> sintomastemp2 = new List<Sintomas>();
+        static List<Medicamentos> medicamentostemp = new List<Medicamentos>();
+        static List<Medicamentos> medicamentostemp2 = new List<Medicamentos>();
+        static List<Receta> recetatemp = new List<Receta>();
+        static List<Receta> recetatemp2 = new List<Receta>();
         static List<HistorialPacient> historialPacientestemp = new List<HistorialPacient>();
         HistorialPacient historialtemp = new HistorialPacient();
         
-
+        private void guardarHistorial()
+        {
+           
+                string json = JsonConvert.SerializeObject(historialPacientestemp);
+                string archivo = Server.MapPath("historialpacientes.json");
+                System.IO.File.WriteAllText(archivo, json);
+            
+        }
         private void leerJason()
         {
            
@@ -25,6 +36,15 @@ namespace Proyecto_FinalProgra
             string json = jsonStream.ReadToEnd();
             jsonStream.Close();
             sintomastemp = JsonConvert.DeserializeObject<List<Sintomas>>(json);
+        }
+
+        private void leerrecetas()
+        {
+            string archivo = Server.MapPath("medicamentos.json");
+            StreamReader jsonStream = File.OpenText(archivo);
+            string json = jsonStream.ReadToEnd();
+            jsonStream.Close();
+            medicamentostemp = JsonConvert.DeserializeObject<List<Medicamentos>>(json);
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,37 +55,54 @@ namespace Proyecto_FinalProgra
                 DropSint.DataValueField = "SintomaDesc";
                 DropSint.DataSource = sintomastemp;
                 DropSint.DataBind();
+                leerrecetas();
+                DropDownListReceta.DataValueField = "CodigoMedicamento";
+                DropDownListReceta.DataSource = medicamentostemp;
+                DropDownListReceta.DataBind();
+
+                DropDownList1.DataBind();
+                Calendar1.DataBind();
+                
+
             }
         }
 
         protected void ButtonSIntomas_Click(object sender, EventArgs e)
         {
 
-            if (String.IsNullOrEmpty(TextBoxNit.Text) || String.IsNullOrEmpty(TextBoxID.Text) || String.IsNullOrEmpty(TextBoxFecha .Text) || String.IsNullOrEmpty(TextBoxTemperatura.Text) || String.IsNullOrEmpty(TextBoxPresion.Text)||String.IsNullOrEmpty(TextBoxTratamiento.Text)|| String.IsNullOrEmpty(TextBoxReceta.Text))
+            if (String.IsNullOrEmpty(TextBoxNit.Text) || String.IsNullOrEmpty(TextBoxID.Text) || String.IsNullOrEmpty(TextBoxFecha .Text) || String.IsNullOrEmpty(TextBoxTemperatura.Text) || String.IsNullOrEmpty(TextBoxPresion.Text)||String.IsNullOrEmpty(TextBoxTratamiento.Text))
             {
                 Response.Write("<script>alert('Agregar todos los campos')</script>");
             }
             else
             {
-                
-                historialtemp.IdConsulta = Convert.ToInt16(TextBoxID.Text);
-                historialtemp.nitpaciente = Convert.ToInt16(TextBoxNit.Text);
-                historialtemp.FechaHoraConsulta = Convert.ToDateTime(TextBoxFecha.Text);
-                historialtemp.Temperatura = Convert.ToInt16(TextBoxTemperatura.Text);
-                historialtemp.Presion = TextBoxPresion.Text;
+                               
                 historialtemp.Sintomas = sintomastemp.ToArray().ToList();
-                historialtemp.diagnostic = TextBoxDiagnostico.Text;
-                historialtemp.Tratamiento = TextBoxTratamiento.Text;
-                
-               
-              
+            
                 
             }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            historialtemp.IdConsulta = Convert.ToInt16(TextBoxID.Text);
+            historialtemp.nitpaciente = Convert.ToInt16(TextBoxNit.Text);
+            historialtemp.FechaHoraConsulta = Convert.ToDateTime(TextBoxFecha.Text);
+            historialtemp.Temperatura = Convert.ToInt16(TextBoxTemperatura.Text);
+            historialtemp.Presion = TextBoxPresion.Text;
+            historialtemp.diagnostic = TextBoxDiagnostico.Text;
+            historialtemp.Tratamiento = TextBoxTratamiento.Text;
+            historialtemp.Receta = medicamentostemp2;
+            historialtemp.ProximaVisita = Calendar1.SelectedDate;
+            historialtemp.Costoconsulta = DropDownList1.SelectedItem.Text;
+            historialPacientestemp.Add(historialtemp);
 
+            GridViewHistorial.DataSource = historialPacientestemp;
+            GridViewHistorial.DataBind();
+            guardarHistorial();
+            medicamentostemp2.Clear();
+            sintomastemp2.Clear();
+           
         }
 
         protected void ButtonAgregarSintoma_Click(object sender, EventArgs e)
@@ -79,6 +116,17 @@ namespace Proyecto_FinalProgra
             GridView1.DataSource = sintomastemp2;
             GridView1.DataBind();
 
+        }
+
+        protected void ButtonAgregaReceta_Click(object sender, EventArgs e)
+        {
+            Medicamentos m = new Medicamentos();
+            m.CodigoMedicamento=DropDownListReceta.SelectedIndex;
+            m.IngedienteGenerico = DropDownListReceta.SelectedItem.Text;
+            m.Laboratorio = DropDownListReceta.SelectedItem.Text;
+            medicamentostemp2.Add(m);
+           
+            
         }
     }
 }

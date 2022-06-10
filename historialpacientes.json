@@ -1,0 +1,75 @@
+[
+  
+  {
+    "IdConsulta": 1,
+    "nitpaciente": 1,
+    "FechaHoraConsulta": "2022-11-02T00:00:00",
+    "Temperatura": 12,
+    "Presion": "90",
+    "Sintomas": null,
+    "diagnostic": "diagnostico 1",
+    "Tratamiento": "Tratamiento 1",
+    "Receta": [
+      {
+        "CodigoMedicamento": 1,
+        "IngedienteGenerico": "2",
+        "Laboratorio": "2",
+        "s": null,
+        "SintomaDesc": null,
+        "CodigoS": 0
+      }
+    ],
+    "ProximaVisita": "2022-07-23T00:00:00",
+    "Costoconsulta": "Q400",
+    "SintomaDesc": null,
+    "CodigoS": 0
+  },
+  {
+    "IdConsulta": 2,
+    "nitpaciente": 2,
+    "FechaHoraConsulta": "2021-11-02T00:00:00",
+    "Temperatura": 31,
+    "Presion": "23",
+    "Sintomas": null,
+    "diagnostic": "diagnostico 2",
+    "Tratamiento": "Tratamiento 2",
+    "Receta": [
+      {
+        "CodigoMedicamento": 1,
+        "IngedienteGenerico": "2",
+        "Laboratorio": "2",
+        "s": null,
+        "SintomaDesc": null,
+        "CodigoS": 0
+      }
+    ],
+    "ProximaVisita": "2022-07-28T00:00:00",
+    "Costoconsulta": "Q200",
+    "SintomaDesc": null,
+    "CodigoS": 0
+  },
+  {
+    "IdConsulta": 3,
+    "nitpaciente": 3,
+    "FechaHoraConsulta": "1997-01-31T00:00:00",
+    "Temperatura": 44,
+    "Presion": "33",
+    "Sintomas": null,
+    "diagnostic": "diagnostico 3",
+    "Tratamiento": "Tratamiento 3",
+    "Receta": [
+      {
+        "CodigoMedicamento": 1,
+        "IngedienteGenerico": "2",
+        "Laboratorio": "2",
+        "s": null,
+        "SintomaDesc": null,
+        "CodigoS": 0
+      }
+    ],
+    "ProximaVisita": "2022-09-10T00:00:00",
+    "Costoconsulta": "Q300",
+    "SintomaDesc": null,
+    "CodigoS": 0
+  }
+]

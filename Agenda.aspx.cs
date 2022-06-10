@@ -14,13 +14,17 @@ namespace Proyecto_FinalProgra
         static List<Agenda> agendatemp = new List<Agenda>();
         static List<Pacientes> pacientestemp = new List<Pacientes>();
 
-        protected void Page_Load(object sender, EventArgs e)
+        private void cargarJson()
         {
             string archivo = Server.MapPath("pacientes.json");
             StreamReader jsonStream = File.OpenText(archivo);
             string json = jsonStream.ReadToEnd();
             jsonStream.Close();
             pacientestemp = JsonConvert.DeserializeObject<List<Pacientes>>(json);
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            cargarJson();
             
         }
 
@@ -34,23 +38,19 @@ namespace Proyecto_FinalProgra
         protected void ButtonAgregacita_Click(object sender, EventArgs e)
         {
             Agenda agendatemporal = new Agenda();
-            int id = 0;
-            id = Convert.ToInt32(TextBoxNit.Text);
-            foreach (var u in pacientestemp )
-            {
-                if (u.NitPaciente == id)
-                {
-                    Response.Write("<script>alert('Id agregado anteriormente')</script>");
-                }
-                else 
-                {
-                    agendatemporal.NitPaciente = Convert.ToInt32(TextBoxNit.Text);
-                    agendatemporal.Fecha = Convert.ToDateTime(TextBoxFecha.Text);
-                    
-                  
-                }
-            }
-            GuardarJason();
+            int id = Convert.ToInt32( TextBoxNit.Text);
+                agendatemporal.NitPaciente = Convert.ToInt32(TextBoxNit.Text);
+                agendatemporal.Fecha = Calendar1.SelectedDate;
+                agendatemporal.Inicio = TextBoxHI.Text;
+                agendatemporal.Fin = TextBoxHF.Text;
+                agendatemp.Add(agendatemporal);
+                GridView1.DataSource = agendatemp;
+                GridView1.DataBind();
+                GuardarJason();
+            
+
+
+
         }
     }
 }
