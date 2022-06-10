@@ -5,8 +5,8 @@ using System.Web;
 
 namespace Proyecto_FinalProgra
 {
-    public class Enfermedades
+    public class Codigos
     {
-        public string enfermades { get; set; }
+        public int CodigoS { get; set; }
     }
 }

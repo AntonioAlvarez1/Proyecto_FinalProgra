@@ -1,23 +1,27 @@
 [
   
   {
-    "CodigoS": 1,
-    "SintomaDesc": "Fiebre"
+    "SintomaDesc": "Fiebre",
+    "CodigoS": 1
   },
   {
-    "CodigoS": 2,
-    "SintomaDesc": "Tos"
+    "SintomaDesc": "Tos",
+    "CodigoS": 2
   },
   {
-    "CodigoS": 3,
-    "SintomaDesc": "Escalofrios"
+    "SintomaDesc": "Escalofrios",
+    "CodigoS": 3
   },
   {
-    "CodigoS": 4,
-    "SintomaDesc": "dolor"
+    "SintomaDesc": "dolor",
+    "CodigoS": 4
   },
   {
-    "CodigoS": 5,
-    "SintomaDesc": "Diarrea"
+    "SintomaDesc": "Diarrea",
+    "CodigoS": 5
+  },
+  {
+    "SintomaDesc": "Congestion",
+    "CodigoS": 6
   }
 ]

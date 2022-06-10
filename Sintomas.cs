@@ -5,9 +5,9 @@ using System.Web;
 
 namespace Proyecto_FinalProgra
 {
-    public class Sintomas
+    public class Sintomas:Codigos
     {
-        public int CodigoS { get; set; }
+        
         public string SintomaDesc { get; set; }
 
     }
