@@ -13,6 +13,7 @@ namespace Proyecto_FinalProgra
     public partial class _Default : Page
     {
         static List<Pacientes> Pacientestemp = new List<Pacientes>();
+        Pacientes pacientes = new Pacientes();
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -34,8 +35,7 @@ namespace Proyecto_FinalProgra
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Pacientes pacientes = new Pacientes();
-
+        
             if (String.IsNullOrEmpty(TextboxNitPaciente.Text) || String.IsNullOrEmpty(TextboxNombre.Text) || String.IsNullOrEmpty(TextBoxApellido.Text) || String.IsNullOrEmpty(TextBoxFecha.Text) || String.IsNullOrEmpty(TextBoxTelefono.Text))
             {
                 Response.Write("<script>alert('Agregar todos los campos')</script>");

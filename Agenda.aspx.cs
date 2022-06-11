@@ -12,7 +12,10 @@ namespace Proyecto_FinalProgra
     public partial class Agenda1 : System.Web.UI.Page
     {
         static List<Agenda> agendatemp = new List<Agenda>();
+        static List<Agenda> agendatemp2 = new List<Agenda>();
         static List<Pacientes> pacientestemp = new List<Pacientes>();
+
+        Agenda agendatemporal = new Agenda();
 
         private void cargarJson()
         {
@@ -22,10 +25,21 @@ namespace Proyecto_FinalProgra
             jsonStream.Close();
             pacientestemp = JsonConvert.DeserializeObject<List<Pacientes>>(json);
         }
+        private void CargaAgenda()
+        {
+            string archivo = Server.MapPath("agenda.json");
+            StreamReader jsonStream = File.OpenText(archivo);
+            string json = jsonStream.ReadToEnd();
+            jsonStream.Close();
+            agendatemp2 = JsonConvert.DeserializeObject<List<Agenda>>(json);
+            GridView1.DataSource = agendatemp2;
+            GridView1.DataBind();
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             cargarJson();
-            
+            CargaAgenda();
+
         }
 
         private void GuardarJason()
@@ -37,8 +51,14 @@ namespace Proyecto_FinalProgra
         }
         protected void ButtonAgregacita_Click(object sender, EventArgs e)
         {
-            Agenda agendatemporal = new Agenda();
-            int id = Convert.ToInt32( TextBoxNit.Text);
+            
+           if(String.IsNullOrEmpty(TextBoxNit.Text)|| String.IsNullOrEmpty(TextBoxHF.Text)||String.IsNullOrEmpty(TextBoxHI.Text))
+            {
+
+                Response.Write("<script>alert('Agregar todos los campos')</script>");
+            }
+            else
+            {
                 agendatemporal.NitPaciente = Convert.ToInt32(TextBoxNit.Text);
                 agendatemporal.Fecha = Calendar1.SelectedDate;
                 agendatemporal.Inicio = TextBoxHI.Text;
@@ -47,9 +67,8 @@ namespace Proyecto_FinalProgra
                 GridView1.DataSource = agendatemp;
                 GridView1.DataBind();
                 GuardarJason();
-            
 
-
+            }
 
         }
     }

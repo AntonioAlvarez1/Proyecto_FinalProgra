@@ -53,8 +53,10 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Inicio</a></li>
                         <li><a runat="server" href="~/UpdatePacientes">Actualizar</a></li>
-                        <li><a runat="server" href="~/About">Acerca de</a></li>
-                        <li><a runat="server" href="~/Contact">Contacto</a></li>
+                        <li><a runat="server" href="~/Agenda">Agenda</a></li>
+                        <li><a runat="server" href="~/Historial">Historial</a></li>
+                        <li><a runat="server" href="~/Recetas">Recetas</a></li>
+                        <li><a runat="server" href="~/Sintomas">Sintomas</a></li>
                     </ul>
                 </div>
             </div>
