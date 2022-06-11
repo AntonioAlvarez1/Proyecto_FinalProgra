@@ -15,8 +15,7 @@ namespace Proyecto_FinalProgra
         static List<Sintomas> sintomastemp2 = new List<Sintomas>();
         static List<Medicamentos> medicamentostemp = new List<Medicamentos>();
         static List<Medicamentos> medicamentostemp2 = new List<Medicamentos>();
-        static List<Receta> recetatemp = new List<Receta>();
-        static List<Receta> recetatemp2 = new List<Receta>();
+        
         static List<HistorialPacient> historialPacientestemp = new List<HistorialPacient>();
         HistorialPacient historialtemp = new HistorialPacient();
         
@@ -38,6 +37,16 @@ namespace Proyecto_FinalProgra
             sintomastemp = JsonConvert.DeserializeObject<List<Sintomas>>(json);
         }
 
+        private void cargahistorial()
+        {
+            string archivo = Server.MapPath("historialpacientes.json");
+            StreamReader jsonStream = File.OpenText(archivo);
+            string json = jsonStream.ReadToEnd();
+            jsonStream.Close();
+            historialPacientestemp = JsonConvert.DeserializeObject<List<HistorialPacient>>(json);
+            GridViewHistorial.DataSource = historialPacientestemp;
+            GridViewHistorial.DataBind();
+        }
         private void leerrecetas()
         {
             string archivo = Server.MapPath("medicamentos.json");
@@ -49,6 +58,7 @@ namespace Proyecto_FinalProgra
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            cargahistorial();
             if (!IsPostBack)
             {
                 leerJason();
